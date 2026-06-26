@@ -1,6 +1,12 @@
 #include <iostream>
 #include <string>
 #include <curl/curl.h> // Inclui a biblioteca cURL para fazer requisições web
+#include <cstdlib>
+
+
+
+// Observação: para compilar use -lcurl, por exemplo:
+// g++ arandu-brain-test.cpp -o arandu-brain-test -lcurl
 
 // Função obrigatória do cURL para salvar o texto que a API do Gemini envia de volta
 size_t SalvarResposta(void* conteudo, size_t tamanho, size_t num_elementos, void* string_destino) {
@@ -11,7 +17,14 @@ size_t SalvarResposta(void* conteudo, size_t tamanho, size_t num_elementos, void
 
 int main() {
     // CONFIGURAÇÃO DOS DADOS DE ACESSO
-    std::string apiKey = "SUA_API_KEY_AQUI"; // <-- COLE SUA CHAVE DA API AQUI
+    const char* key = std::getenv("GEMINI_API_KEY");
+
+    if (key == nullptr) {
+        std::cerr << "GEMINI_API_KEY não encontrada." << std::endl;
+        return 1;
+    }
+
+    std::string apiKey = key; // <-- COLE SUA CHAVE DA API AQUI
     std::string modelo = "gemini-1.5-flash"; // Nome do modelo que vai processar o pedido
 
     // CONFIGURAÇÃO DO PRE-PROMPT E PROMPT

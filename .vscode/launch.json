@@ -3,5 +3,25 @@
     // Focalizar para exibir as descrições dos atributos existentes.
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        
+        {
+            "name": "Executar C++",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/arandu-brain-test", // Caminho para o executável do seu programa
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "GEMINI_API_KEY",
+                    "value": "SUA_API_KEY"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb"
+        }
+
+    ]
 }
