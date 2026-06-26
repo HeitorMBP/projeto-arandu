@@ -1,0 +1,7 @@
+{
+  "name": "meu-projeto-curl",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "curl"
+  ]
+}
