@@ -5,6 +5,7 @@ Este projeto tem o objetivo de auxiliar professores da escola pública Castelo B
 \
 \
 \
+## Abstract
 This project has the objective of assisting teachers from the Castelo Branco school with technology challenges through Gemini artificial intelligence. For that, we are going to develop a smart physical assistant similar to Alexa, based on the ESP32 microcontroller and embedded systems techniques. The solution aims to optimize instructional time, increase students' concentration in class, and provide more security when using devices.\
 \
 **Key-words:** assisting, teachers, technology challenges, Gemini, assistant, ESP32.
